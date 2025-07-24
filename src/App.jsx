@@ -30,7 +30,7 @@ function App() {
         <Route path='/student-dashboard' element={<StudentDashboard />} />
         <Route path='/student-all-courses' element={<StudentAllCourses />} />
         <Route path='/player' element={<Player />} />
-        <Route path='settings' element={<Settings />} />
+        <Route path='/settings' element={<Settings />} />
       </Routes>
     </div>
     </>
