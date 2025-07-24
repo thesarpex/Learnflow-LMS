@@ -9,6 +9,11 @@ import StudentDashboard from "./routes/student/StudentDashboard";
 import StudentAllCourses from "./routes/student/StudentAllCourses";
 import Player from "./routes/student/Player";
 import Settings from "./routes/student/Settings";
+import Tutor from './routes/tutor/Tutor';
+import TutorDashboard from "./routes/tutor/TutorDashboard";
+import CourseBuilder from "./routes/tutor/CourseBuilder";
+import TutorAllCourses from "./routes/tutor/TutorAllCourses";
+
 
 function App() {
   const {loading, currentUser} = useAuth();
@@ -31,6 +36,14 @@ function App() {
         <Route path='/student-all-courses' element={<StudentAllCourses />} />
         <Route path='/player' element={<Player />} />
         <Route path='/settings' element={<Settings />} />
+        <Route path='/tutor' element={<Tutor />}>
+            <Route path='signup' element={<Signup />} />
+            <Route path='login' element={<Login />} />
+            <Route path='dashboard' element={<TutorDashboard />} />
+            <Route path='course-builder' element={<CourseBuilder />} />
+            <Route path='all-courses' element={<TutorAllCourses />} />
+            <Route path='settings' element={<Settings />} />
+        </Route>
       </Routes>
     </div>
     </>
