@@ -13,7 +13,7 @@ import Tutor from './routes/tutor/Tutor';
 import TutorDashboard from "./routes/tutor/TutorDashboard";
 import CourseBuilder from "./routes/tutor/CourseBuilder";
 import TutorAllCourses from "./routes/tutor/TutorAllCourses";
-
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   const {loading, currentUser} = useAuth();
@@ -32,14 +32,26 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/student-dashboard' element={<StudentDashboard />} />
+
+        <Route path='/student-dashboard' element={
+          <ProtectedRoute>
+            <StudentDashboard />
+          </ProtectedRoute>
+        } />
+
         <Route path='/student-all-courses' element={<StudentAllCourses />} />
         <Route path='/player' element={<Player />} />
         <Route path='/settings' element={<Settings />} />
         <Route path='/tutor' element={<Tutor />}>
             <Route path='signup' element={<Signup />} />
             <Route path='login' element={<Login />} />
-            <Route path='dashboard' element={<TutorDashboard />} />
+            
+            <Route path='dashboard' element={
+              <ProtectedRoute>
+                <TutorDashboard />
+              </ProtectedRoute>
+            } />
+            
             <Route path='course-builder' element={<CourseBuilder />} />
             <Route path='all-courses' element={<TutorAllCourses />} />
             <Route path='settings' element={<Settings />} />
