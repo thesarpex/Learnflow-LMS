@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useAuth } from '../../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
 
@@ -16,11 +16,11 @@ const handleSubmit = async (e) => {
   e.preventDefault();
   setError('');
 
-  if(!email || !password || !passConfirm) {
+  if(!email || !password || !passwordConfirm) {
     return setError('Please fill in all fields')
   }
 
-  if(password !==passConfirm) {
+  if(password !==passwordConfirm) {
     return setError('Passwords do not match')
   }
 
@@ -61,12 +61,12 @@ const handleSubmit = async (e) => {
           <input id='email' type='email'  value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter your email' required />
         </div>
 
-        <div>
+        {/*<div>
           <label htmlFor='username'>
             User name
           </label>
-          <input id='username' type='text'  value={''} onChange={''} placeholder='Enter your user name' required />
-        </div>
+          <input id='username' type='text' onChange={''} placeholder='Enter your user name' required />
+        </div>*/}
 
         <div>
           <label htmlFor='password'>
@@ -83,9 +83,16 @@ const handleSubmit = async (e) => {
         </div>
         
         <button type='submit' disabled={loading}>
-          {loading ? 'Creating Account...' : 'Sign up'}
+          {loading ? 'Creating Account...' : 'Register'}
         </button>
       </form>
+
+      <div>
+        <p>
+          Already have an account?
+          <Link to='/login'>Login</Link>
+        </p>
+      </div>
     </div>
   )
 }
