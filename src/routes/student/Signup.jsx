@@ -43,8 +43,46 @@ const handleSubmit = async (e) => {
   return (
     <div>
       <div>
-        <h1>Create Your Account</h1>
+        <p>Welcome!</p>
+        <h2>{''}Sign up to be a student</h2>
       </div>
+
+      {
+        error && (
+          <div>{error}{''}</div>
+        )
+      }
+
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor='email'>
+            Email
+          </label>
+          <input id='email' type='email'  value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter your email' required />
+        </div>
+
+        <div>
+          <label htmlFor='username'>
+            User name
+          </label>
+          <input id='username' type='text'  value={''} onChange={''} placeholder='Enter your user name' required />
+        </div>
+
+        <div>
+          <label htmlFor=''>
+            Email
+          </label>
+          <input id='email' type='email'  value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter your email' required />
+
+          <div>
+          <label htmlFor='email'>
+            Email
+          </label>
+          <input id='email' type='email'  value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter your email' required />
+        </div>
+        </div>
+
+      </form>
     </div>
   )
 }
