@@ -6,7 +6,7 @@ const Signup = () => {
 
 const [email, setEmail] = useState();
 const [password, setPassword] = useState();
-const [passConfirm, setPasswordConfirmed] = useState();
+const [passwordConfirm, setPasswordConfirmed] = useState();
 const [loading, setLoading] = useState();
 const [error, setError] = useState();
 const {signup} = useAuth();
@@ -69,16 +69,16 @@ const handleSubmit = async (e) => {
         </div>
 
         <div>
-          <label htmlFor=''>
-            Email
+          <label htmlFor='password'>
+            Password
           </label>
-          <input id='email' type='email'  value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter your email' required />
+          <input id='password' type='password'  value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Enter your password' required />
 
           <div>
-          <label htmlFor='email'>
-            Email
+          <label htmlFor='password-confirm'>
+            Confirm Password
           </label>
-          <input id='email' type='email'  value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter your email' required />
+          <input id='password-confirm' type='password'  value={passwordConfirm} onChange={(e) => setPasswordConfirmed(e.target.value)} placeholder='Confirm your password' required />
         </div>
         </div>
 
