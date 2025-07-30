@@ -81,7 +81,10 @@ const handleSubmit = async (e) => {
           <input id='password-confirm' type='password'  value={passwordConfirm} onChange={(e) => setPasswordConfirmed(e.target.value)} placeholder='Confirm your password' required />
         </div>
         </div>
-
+        
+        <button type='submit' disabled={loading}>
+          {loading ? 'Creating Account...' : 'Sign up'}
+        </button>
       </form>
     </div>
   )
