@@ -23,7 +23,7 @@ export function AuthProvider({children}) {
     async function signup(email, password) {
         setError('');
         try {
-            return await createUserWithEmailAndPassword(auth, email, password);
+            return await createUserWithEmailAndPassword(auth, email, username, password);
         } catch (err) {
             setError(err.message);
             throw err;
@@ -33,7 +33,7 @@ export function AuthProvider({children}) {
     async function login(email, password) {
         setError('');
         try {
-            return await signInWithEmailAndPassword(auth, email, password);
+            return await signInWithEmailAndPassword(auth, email, username, password);
         } catch (err) {
             setError(err.message);
             throw err;
