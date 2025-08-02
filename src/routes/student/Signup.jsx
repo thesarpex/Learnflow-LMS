@@ -55,8 +55,8 @@ const Signup = () => {
       )}
 
       <form onSubmit={handleSubmit}>
-        <div className="flex flex-row">
-          <div className="'text-gray-600'">
+        <div>
+          <div>
             <label>Student</label>
             <input
               id="student-radio"
