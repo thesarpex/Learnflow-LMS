@@ -42,7 +42,7 @@ const Signup = () => {
 
   return (
     <div>
-      <div className="flex flex-col gap-4 border border-gray-400 w-fit rounded-lg p-4">
+      <div className="flex flex-col gap-4 border border-gray-400 w-fit rounded-lg shadow-xl p-4">
         <div>
           <p className="text-2xl">Welcome!</p>
           <h2 className="text-3xl font-medium">
