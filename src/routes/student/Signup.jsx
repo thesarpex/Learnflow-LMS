@@ -42,22 +42,23 @@ const Signup = () => {
 
   return (
     <div>
+    <div className="flex flex-col gap-4 border border-gray-400 w-fit rounded-lg p-4">
       <div>
-        <p>Welcome!</p>
-        <h2>{""}Sign up to create your account</h2>
+        <p className="text-2xl">Welcome!</p>
+        <h2 className="text-3xl font-medium">{""}Sign up to create your account</h2>
       </div>
 
       {error && (
-        <div>
+        <div className="bg-red-50 text-red-700 p-3 rounded-md mb-4 text-sm">
           {error}
           {""}
         </div>
       )}
 
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <div className="flex gap-4">
           <div>
-            <label>Student</label>
+            <label className="pr-1">Student</label>
             <input
               id="student-radio"
               type="radio"
@@ -68,7 +69,7 @@ const Signup = () => {
           </div>
 
           <div>
-            <label>Tutor</label>
+            <label className="pr-1">Tutor</label>
             <input
               id="tutor-radio"
               type="radio"
@@ -133,6 +134,7 @@ const Signup = () => {
           <Link to="/login">Login</Link>
         </p>
       </div>
+    </div>
     </div>
   );
 };
