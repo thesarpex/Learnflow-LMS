@@ -41,13 +41,14 @@ const Signup = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10">
-      <div className="mb-7">
+    <div className="flex items-center">
+    <div className="max-w-md ml-25 mt-5">
+      <div className="mb-7 pl-2">
         <img src="src/assets/assets_learn_flow/Logo.png" alt="LearnFlow logo" />
       </div>
-      <div className="flex flex-col gap-4 border border-gray-400 w-fit rounded-lg shadow-xl px-10 py-3">
+      <div className="flex flex-col gap-5 border border-gray-400 w-fit rounded-lg shadow-xl px-10 py-3">
         <div>
-          <p className="text-2xl">Welcome!</p>
+          <p className="text-2xl pb-5">Welcome!</p>
           <h2 className="text-3xl font-medium">{""}Sign up to</h2>
           <p className="text-xl">create your account</p>
         </div>
@@ -59,7 +60,7 @@ const Signup = () => {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-5">
           <div>
             <div>I am signing up as :</div>
             <div className="flex gap-4">
@@ -107,7 +108,7 @@ const Signup = () => {
           <input id='username' type='text' onChange={''} placeholder='Enter your user name' required />
         </div>*/}
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-5">
             <div>
               <label htmlFor="password">Password</label>
               <input
@@ -155,6 +156,13 @@ const Signup = () => {
             </Link>
           </p>
         </div>
+      </div>
+
+      
+    </div>
+
+    <div>
+        <img src="src/assets/assets_learn_flow/small-team-discussing-ideas-2194220-0.png" alt="Discussion image"/>
       </div>
     </div>
   );
