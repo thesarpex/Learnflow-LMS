@@ -46,8 +46,9 @@ const Signup = () => {
         <div>
           <p className="text-2xl">Welcome!</p>
           <h2 className="text-3xl font-medium">
-            {""}Sign up to create your account
+            {""}Sign up to
           </h2>
+          <p className="text-xl">create your account</p>
         </div>
 
         {error && (
@@ -92,7 +93,7 @@ const Signup = () => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="block border border-gray-400 rounded-sm"
+              className="w-full block border border-gray-400 rounded-sm text-gray-500 px-3 py-2 focus:outline-none focus:ring-1"
               placeholder="Enter your email"
               required
             />
