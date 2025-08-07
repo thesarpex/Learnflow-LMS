@@ -41,7 +41,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-15">
+    <div className="max-w-md mx-auto mt-5">
       <div className="flex flex-col gap-4 border border-gray-400 w-fit rounded-lg shadow-xl p-10">
           <div>
             <p className="text-2xl">Welcome!</p>
@@ -91,7 +91,7 @@ const Signup = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-100 block border border-gray-400 rounded-sm text-gray-500 px-3 py-2 focus:outline-none focus:ring-1 mt-1"
+                className="w-100 block border border-gray-400 rounded-sm text-gray-500 px-3 py-3 focus:outline-none focus:ring-1 mt-1"
                 placeholder="Enter your email"
                 required
               />
@@ -113,7 +113,7 @@ const Signup = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
-                  className="w-full block border border-gray-400 rounded-sm text-gray-500 px-3 py-2 focus:outline-none focus:ring-1 mt-1"
+                  className="w-full block border border-gray-400 rounded-sm text-gray-500 px-3 py-3 focus:outline-none focus:ring-1 mt-1"
                   required
                 />
               </div>
@@ -125,22 +125,22 @@ const Signup = () => {
                   type="password"
                   value={passwordConfirm}
                   onChange={(e) => setPasswordConfirmed(e.target.value)}
-                  className="w-full block border border-gray-400 rounded-sm text-gray-500 px-3 py-2 focus:outline-none focus:ring-1 mt-1"
+                  className="w-full block border border-gray-400 rounded-sm text-gray-500 px-3 py-3 focus:outline-none focus:ring-1 mt-1 mb-1"
                   placeholder="Confirm your password"
                   required
                 />
               </div>
             </div>
 
-            <button type="submit" disabled={loading}>
+            <button className="border rounded-sm bg-gray-900 text-white py-3 w-full hover:bg-black hover:cursor-pointer focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed" type="submit" disabled={loading}>
               {loading ? "Creating Account..." : "Register"}
             </button>
           </form>
 
           <div className="flex flex-col items-center">
-            <p>
+            <p className="text-gray-600">
               Already have an account?
-              <Link to="/login">Login</Link>
+              <Link to="/login" className="text-gray-700 font-medium hover:text-black ml-2">Login</Link>
             </p>
           </div>
       </div>
