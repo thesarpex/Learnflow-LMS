@@ -92,15 +92,7 @@ const Login = () => {
             />
           </div>
 
-          {/*<div>
-          <label htmlFor='username'>
-            User name
-          </label>
-          <input id='username' type='text' onChange={''} placeholder='Enter your user name' required />
-        </div>*/}
-
-          <div className="flex flex-col gap-5">
-            <div>
+          <div>
               <label htmlFor="password">Password</label>
               <input
                 id="password"
@@ -111,6 +103,12 @@ const Login = () => {
                 className="w-full block border border-gray-400 rounded-sm text-gray-500 px-3 py-3 focus:outline-none focus:ring-1 mt-1"
                 required
               />
+          </div>
+
+          <div>
+            <div>
+              <input id="remember-me" type="checkbox"/>
+              <label htmlFor="remember-me" className="text-xs pl-2">Remember me</label>
             </div>
           </div>
 
