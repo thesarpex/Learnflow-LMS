@@ -105,11 +105,13 @@ const Login = () => {
               />
           </div>
 
-          <div>
+          <div className="flex justify-around">
             <div>
               <input id="remember-me" type="checkbox"/>
               <label htmlFor="remember-me" className="text-xs pl-2">Remember me</label>
             </div>
+
+            <div>Forgot Password?</div>
           </div>
 
           <button
