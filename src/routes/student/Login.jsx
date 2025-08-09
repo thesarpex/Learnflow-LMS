@@ -55,7 +55,7 @@ const Login = () => {
           <div>
             <div>I am signing in as :</div>
             <div className="flex gap-4">
-              <div>
+              <div className="flex items-center">
                 <label className="pr-1">Student</label>
                 <input
                   id="student-radio"
@@ -66,7 +66,7 @@ const Login = () => {
                 />
               </div>
 
-              <div>
+              <div className="flex items-center">
                 <label className="pr-1">Tutor</label>
                 <input
                   id="tutor-radio"
@@ -105,13 +105,13 @@ const Login = () => {
               />
           </div>
 
-          <div className="flex justify-around">
-            <div>
+          <div className="flex justify-between">
+            <div className="flex items-center">
               <input id="remember-me" type="checkbox"/>
               <label htmlFor="remember-me" className="text-xs pl-2">Remember me</label>
             </div>
 
-            <div>Forgot Password?</div>
+            <div className="text-xs text-gray-600">Forgot Password?</div>
           </div>
 
           <button
