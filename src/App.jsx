@@ -37,15 +37,15 @@ function App() {
           <ProtectedRoute>
             <StudentDashboard />
           </ProtectedRoute>
-        } />
+        }>
+          <Route path='student-all-courses' element={<StudentAllCourses />} />
+        <Route path='player' element={<Player />} />
+        <Route path='settings' element={<Settings />} />
+        </Route>
 
-        <Route path='/student-all-courses' element={<StudentAllCourses />} />
-        <Route path='/player' element={<Player />} />
-        <Route path='/settings' element={<Settings />} />
         
+
         <Route path='/tutor' element={<Tutor />}>
-            <Route path='signup' element={<Signup />} />
-            <Route path='login' element={<Login />} />
             
             <Route path='tutor-dashboard' element={
               <ProtectedRoute>
