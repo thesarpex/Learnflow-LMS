@@ -33,7 +33,7 @@ const Login = () => {
 
   return (
     <div className="flex items-center">
-    <div className="max-w-md ml-25 mt-5">
+    <div className="max-w-md ml-25 my-5">
       <div className="mb-7 pl-2">
         <img src="src/assets/assets_learn_flow/Logo.png" alt="LearnFlow logo" />
       </div>
@@ -115,7 +115,7 @@ const Login = () => {
           </div>
 
           <button
-            className="border rounded-sm bg-gray-900 text-white py-3 w-full hover:bg-black hover:cursor-pointer focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+            className="border rounded-sm bg-gray-900 text-white py-3 w-full hover:bg-black hover:cursor-pointer focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed mt-3 mb-2"
             type="submit"
             disabled={loading}
           >
@@ -123,7 +123,7 @@ const Login = () => {
           </button>
         </form>
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center mb-5">
           <p className="text-gray-600">
             Don't have an account yet?
             <Link
@@ -135,8 +135,6 @@ const Login = () => {
           </p>
         </div>
       </div>
-
-      
     </div>
 
     <div>

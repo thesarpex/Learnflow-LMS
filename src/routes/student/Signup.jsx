@@ -42,7 +42,7 @@ const Signup = () => {
 
   return (
     <div className="flex items-center">
-    <div className="max-w-md ml-25 mt-5">
+    <div className="max-w-md ml-25 my-5">
       <div className="mb-7 pl-2">
         <img src="src/assets/assets_learn_flow/Logo.png" alt="LearnFlow logo" />
       </div>
@@ -64,7 +64,7 @@ const Signup = () => {
           <div>
             <div>I am signing up as :</div>
             <div className="flex gap-4">
-              <div>
+              <div className="flex items-center">
                 <label className="pr-1">Student</label>
                 <input
                   id="student-radio"
@@ -75,7 +75,7 @@ const Signup = () => {
                 />
               </div>
 
-              <div>
+              <div className="flex items-center">
                 <label className="pr-1">Tutor</label>
                 <input
                   id="tutor-radio"
@@ -145,7 +145,7 @@ const Signup = () => {
           </button>
         </form>
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center mb-3">
           <p className="text-gray-600">
             Already have an account?
             <Link
