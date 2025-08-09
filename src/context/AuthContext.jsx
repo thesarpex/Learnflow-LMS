@@ -42,7 +42,16 @@ export function AuthProvider({ children }) {
   async function login(email, password) {
     setError("");
     try {
-      return await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const userRef = db.collection("users").doc(userCredential.user.uid);
+      const userData = await userRef.get();
+      if (userData.exists) {
+        const userType = userData.data().userType;
+        return userCredential;
+      } else{
+        setError("User not found");
+        throw new Error("User not found");
+      }
     } catch (err) {
       setError(err.message);
       throw err;
