@@ -3,6 +3,7 @@ import { useAuth } from "../../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const [userType, setUserType] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [passwordConfirm, setPasswordConfirmed] = useState();
@@ -14,6 +15,10 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+
+    if (!userType) {
+      return setError("Please select either Student or Tutor");
+    }
 
     if (!email || !password || !passwordConfirm) {
       return setError("Please fill in all fields");
@@ -29,8 +34,12 @@ const Signup = () => {
 
     try {
       setLoading(true);
-      await signup(email, password);
-      navigate("/student-dashboard");
+      await signup(email, password, userType);
+      if(userType === "Student") {
+        navigate("/student-dashboard");
+      } else if (userType === "Tutor") {
+        navigate("/tutor-dashboard");
+      }
     } catch (err) {
       setError(
         "Failed to create account: " + (err.message || "Please try again")
@@ -67,22 +76,24 @@ const Signup = () => {
               <div className="flex items-center">
                 <label className="pr-1">Student</label>
                 <input
-                  id="student-radio"
+                  id="student"
                   type="radio"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
+                  value="Student"
+                  checked={userType === "Student"}
+                  onChange={(e) => setUserType(e.target.checked ? "Student" : "")}
+                  
                 />
               </div>
 
               <div className="flex items-center">
                 <label className="pr-1">Tutor</label>
                 <input
-                  id="tutor-radio"
+                  id="tutor"
                   type="radio"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
+                  value="Tutor"
+                  checked={userType === "Tutor"}
+                  onChange={(e) => setUserType(e.target.checked ? "Tutor" : "")}
+                
                 />
               </div>
             </div>
