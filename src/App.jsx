@@ -9,7 +9,6 @@ import StudentDashboard from "./routes/student/StudentDashboard";
 import StudentAllCourses from "./routes/student/StudentAllCourses";
 import Player from "./routes/student/Player";
 import Settings from "./routes/student/Settings";
-import Tutor from "./routes/tutor/Tutor";
 import TutorDashboard from "./routes/tutor/TutorDashboard";
 import CourseBuilder from "./routes/tutor/CourseBuilder";
 import TutorAllCourses from "./routes/tutor/TutorAllCourses";
