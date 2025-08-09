@@ -3,6 +3,7 @@ import {Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
 const Login = () => {
+  const [userType, setUserType] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [loading, setLoading] = useState();
@@ -21,7 +22,10 @@ const Login = () => {
     try {
       setLoading(true);
       await login(email, password);
-      navigate("/student-dashboard");
+      if (userType === "Student"){navigate("/student-dashboard");
+      } else if (userType === "Tutor"){
+        navigate("/tutor-dashboard")
+      }
     } catch (err) {
       setError(
         "Failed to access account: " + (err.message || "Please try again")
@@ -58,11 +62,11 @@ const Login = () => {
               <div className="flex items-center">
                 <label className="pr-1">Student</label>
                 <input
-                  id="student-radio"
+                  id="student"
                   type="radio"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
+                  value="Student"
+                  checked={userType === "Student"}
+                  onChange={(e) => setUserType(e.target.checked ? "Student" : "")}
                 />
               </div>
 
@@ -71,9 +75,9 @@ const Login = () => {
                 <input
                   id="tutor-radio"
                   type="radio"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
+                  value="Tutor"
+                  checked={userType === "Tutor"}
+                  onChange={(e) => setUserType(e.target.checked ? "Tutor" : "")}
                 />
               </div>
             </div>
