@@ -65,8 +65,6 @@ const Login = () => {
                   id="student"
                   type="radio"
                   value="Student"
-                  checked={userType === "Student"}
-                  onChange={(e) => setUserType(e.target.checked ? "Student" : "")}
                 />
               </div>
 
@@ -76,8 +74,6 @@ const Login = () => {
                   id="tutor-radio"
                   type="radio"
                   value="Tutor"
-                  checked={userType === "Tutor"}
-                  onChange={(e) => setUserType(e.target.checked ? "Tutor" : "")}
                 />
               </div>
             </div>
