@@ -45,7 +45,7 @@ const Login = () => {
         <div>
           <p className="text-2xl pb-5">Welcome!</p>
           <h2 className="text-3xl font-medium">{""}Sign in to</h2>
-          <p className="text-xl">your account</p>
+          <p className="text-xl pb-2">your account</p>
         </div>
 
         {error && (
@@ -56,29 +56,6 @@ const Login = () => {
         )}
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-          <div>
-            <div>I am signing in as :</div>
-            <div className="flex gap-4">
-              <div className="flex items-center">
-                <label className="pr-1">Student</label>
-                <input
-                  id="student"
-                  type="radio"
-                  value="Student"
-                />
-              </div>
-
-              <div className="flex items-center">
-                <label className="pr-1">Tutor</label>
-                <input
-                  id="tutor-radio"
-                  type="radio"
-                  value="Tutor"
-                />
-              </div>
-            </div>
-          </div>
-
           <div>
             <label htmlFor="email">Email</label>
             <input
