@@ -22,10 +22,7 @@ const Login = () => {
     try {
       setLoading(true);
       await login(email, password);
-      if (userType === "Student"){navigate("/student-dashboard");
-      } else if (userType === "Tutor"){
-        navigate("/tutor-dashboard")
-      }
+      navigate("/student-dashboard");
     } catch (err) {
       setError(
         "Failed to access account: " + (err.message || "Please try again")
